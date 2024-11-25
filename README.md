@@ -29,7 +29,7 @@ Where:
 - $x$: Input to the activation function.
 - $\alpha$: Parameter controlling the rate of saturation.
 
-The derivative with respect to \( x \) ensures efficient gradient computation during backpropagation:
+The derivative with respect to $x$ ensures efficient gradient computation during backpropagation:
 
 $$ \frac{d\sigma}{dx} = \frac{\alpha e^{-\alpha x}}{(1 + e^{-\alpha x})^2} $$
 
