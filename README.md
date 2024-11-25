@@ -1,4 +1,4 @@
-# Adaptive Sigmoid: A Novel Activation Function with Controlled Saturation
+# Adaptive Sigmoid: An Activation Function with Controlled Saturation
 
 <br>
 
@@ -10,11 +10,10 @@ Artificial Neural Networks (ANNs) rely heavily on activation functions to introd
 
 ## Motivation
 
-Deep learning architectures often struggle with:
-- **Vanishing Gradients**: Gradients diminish as network depth increases, slowing training.
-- **Quick Saturation**: Loss of information due to abrupt transitions in activation.
+Traditional activation functions like sigmoid, tanh, and ReLU are widely used in deep learning, but they each come with limitations. Sigmoid and tanh suffer from **vanishing gradients** and **quick saturation**, making it difficult for deep networks to learn efficiently. ReLU, while avoiding vanishing gradients, has issues like the **dying ReLU problem**, where neurons can become inactive.
 
-**Adaptive Sigmoid** resolves these challenges by introducing a parameter `α` to control the rate of saturation, balancing non-linearity and stability for better model performance.
+
+The **Adaptive Sigmoid** was designed to provide more flexibility in handling saturation behavior. By introducing a parameter $\alpha$, the function allows for finer control over the rate of saturation, which can help stabilize training, particularly in deep networks. This additional control is intended to offer a new perspective on managing non-linearity in neural networks, without claiming a groundbreaking scientific advancement. By adjusting $\alpha$, users can explore different saturation behaviors, potentially improving training stability and convergence without altering the fundamental architecture of the network.
 
 <br>
 
@@ -32,16 +31,15 @@ The derivative with respect to \( x \) ensures efficient gradient computation du
 
 $$ \frac{d\sigma}{dx} = \frac{\alpha e^{-\alpha x}}{(1 + e^{-\alpha x})^2} $$
 
-<img src="https://github.com/doguilmak/Adaptive-Sigmoid/blob/main/assets/3d.png" alt="Adaptive Sigmoid">
+<img src="https://github.com/doguilmak/Adaptive-Sigmoid/blob/main/assets/3d.png" width=900 alt="Adaptive Sigmoid">
 
 <br>
 
 ## Features
 
-- **Controlled Saturation**: Fine-tune the activation using \( \alpha \).
-- **Improved Stability**: Smoother convergence curves and reduced vanishing gradient issues.
-- **Flexible Training**: Balances non-linearity and stability for various datasets and architectures.
-- **Compatibility**: Works seamlessly with PyTorch and TensorFlow.
+The **Adaptive Sigmoid** offers several key advantages for neural network training. By introducing the parameter $\alpha$, it allows for **controlled saturation**, enabling users to fine-tune the activation function for optimal performance. This flexibility contributes to **improved stability**, helping to achieve smoother convergence and reduce issues like vanishing gradients. The activation function strikes a balance between **non-linearity** and **stability**, making it suitable for a wide range of datasets and architectures. 
+
+Additionally, the **Adaptive Sigmoid** is designed to be **compatible** with both PyTorch and TensorFlow, allowing for seamless integration into existing deep learning workflows.
 
 <br>
 
