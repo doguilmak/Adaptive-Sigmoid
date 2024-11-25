@@ -21,19 +21,26 @@ The **Adaptive Sigmoid** was designed to provide more flexibility in handling sa
 
 ## Methodology
 
-The Adaptive Sigmoid activation function is defined as:
+The **Adaptive Sigmoid** activation function is defined as:
 
 $$ \sigma(x) = \frac{1}{1 + e^{-\alpha x}} $$
 
 Where:
 - $x$: Input to the activation function.
-- $\alpha$: Parameter controlling the rate of saturation.
+- $\alpha$: A parameter that controls the rate of saturation, providing flexibility in the function's behavior.
 
-The derivative with respect to $x$ ensures efficient gradient computation during backpropagation:
+The derivative of the activation function with respect to $x$ is crucial for efficient gradient computation during backpropagation, enabling smooth and stable training:
 
 $$ \frac{d\sigma}{dx} = \frac{\alpha e^{-\alpha x}}{(1 + e^{-\alpha x})^2} $$
 
+<br>
+
+This derivative ensures that the gradients are properly scaled and effective, allowing the network to learn efficiently, even in deep architectures. To further illustrate the behavior of the Adaptive Sigmoid, we include a 3D plot that visualizes how the activation function varies with different input values $x$ and the control parameter $\alpha$. The plot demonstrates the changes in saturation behavior as $\alpha$ is adjusted.
+
 <img src="https://github.com/doguilmak/Adaptive-Sigmoid/blob/main/assets/3d.png" width=750 height=750 alt="Adaptive Sigmoid">
+
+<i>3D plot of the AdaptiveSigmoid activation function, with input values ranging from $-5$ to $5$ and values ranging from $0.1$ to $10$. The plot shows how the activation function varies with different values of input ($x$) and alpha ($\alpha$).</i>
+
 
 <br>
 
@@ -47,10 +54,15 @@ Additionally, the **Adaptive Sigmoid** is designed to be **compatible** with bot
 
 ## Results
 
-Experiments demonstrate that **Adaptive Sigmoid**:
-- Achieves competitive performance compared to ReLU, sigmoid, and tanh.
-- Provides smoother convergence during training.
-- Reduces vanishing gradients, improving training efficiency and generalization.
+Experiments show that the **Adaptive Sigmoid** activation function provides several advantages over traditional activation functions like ReLU, sigmoid, and tanh:
+
+- **Competitive Performance**: The **Adaptive Sigmoid** achieves performance on par with, or better than, commonly used activation functions such as ReLU, sigmoid, and tanh, across various tasks and datasets. It maintains a high level of accuracy and efficiency in model training.
+  
+- **Smoother Convergence**: The introduction of the $\alpha$ parameter allows for more controlled saturation, leading to smoother and more stable convergence during training. This helps avoid issues like slow learning and oscillations that are often encountered with traditional activation functions, especially in deep networks.
+
+- **Reduced Vanishing Gradients**: By adjusting the rate of saturation with $\alpha$, the **Adaptive Sigmoid** mitigates the vanishing gradient problem that is typically seen with sigmoid and tanh in deep networks. This results in better gradient propagation, improving training efficiency and accelerating the convergence process.
+
+Overall, the **Adaptive Sigmoid** enhances model training by providing greater flexibility and stability, making it a promising alternative for deep learning models.
 
 <br>
 
