@@ -1,4 +1,4 @@
-# Adaptive Sigmoid: An Activation Function with Controlled Saturation
+# An Activation Function with Controlled Saturation
 
 <img src="https://github.com/doguilmak/Adaptive-Sigmoid/blob/main/assets/bg.png" width=900 alt="Banner">
 
