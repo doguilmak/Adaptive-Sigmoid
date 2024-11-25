@@ -32,7 +32,7 @@ The derivative with respect to \( x \) ensures efficient gradient computation du
 
 $$ \frac{d\sigma}{dx} = \frac{\alpha e^{-\alpha x}}{(1 + e^{-\alpha x})^2} $$
 
-<img src="" alt="Adaptive Sigmoid">
+<img src="https://github.com/doguilmak/Adaptive-Sigmoid/blob/main/assets/3d.png" alt="Adaptive Sigmoid">
 
 <br>
 
